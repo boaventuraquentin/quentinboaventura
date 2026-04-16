@@ -885,6 +885,27 @@
     pointer-events: none;
     z-index: 200;
   }
+  /* Quand la carte est dans la zone droite, la décaler vers la gauche */
+  .cta-side .peek-card {
+    left: auto;
+    right: 0;
+    transform: translateX(0) perspective(800px) rotateY(-90deg);
+  }
+  .cta-side .peek-card.peek-visible {
+    animation: peekFlipInRight 0.45s cubic-bezier(0.2, 0.8, 0.25, 1) forwards;
+  }
+  .cta-side .peek-card.peek-hiding {
+    animation: peekFlipOutRight 0.2s ease-in forwards;
+  }
+  @keyframes peekFlipInRight {
+    0% { opacity: 0; transform: translateX(0) perspective(800px) rotateY(-90deg); }
+    60% { opacity: 1; }
+    100% { opacity: 1; transform: translateX(0) perspective(800px) rotateY(0deg); }
+  }
+  @keyframes peekFlipOutRight {
+    0% { opacity: 1; transform: translateX(0) perspective(800px) rotateY(0deg); }
+    100% { opacity: 0; transform: translateX(0) perspective(800px) rotateY(90deg); }
+  }
   .peek-card.peek-visible {
     opacity: 1;
     pointer-events: auto;
@@ -1673,10 +1694,15 @@
       let hideTimer = null;
       let mouseX = 0, currentX = 0, rafId = null;
 
+      const isRightAligned = trigger.closest('.cta-side') !== null;
+
       const follow = () => {
         currentX += (mouseX - currentX) * 0.12;
-        card.style.setProperty('--peek-x', `${currentX}px`);
-        card.style.transform = `translateX(calc(-50% + ${currentX}px)) perspective(800px) rotateY(0deg)`;
+        if (isRightAligned) {
+          card.style.transform = `translateX(0) perspective(800px) rotateY(0deg)`;
+        } else {
+          card.style.transform = `translateX(calc(-50% + ${currentX}px)) perspective(800px) rotateY(0deg)`;
+        }
         if (Math.abs(mouseX - currentX) > 0.3) rafId = requestAnimationFrame(follow);
         else rafId = null;
       };
