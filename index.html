@@ -221,7 +221,7 @@
   /* Forme 1 — grande ellipse cuivre en haut à gauche */
   .shape-1 {
     width: 600px; height: 140px;
-    left: -8%; top: 18%;
+    left: -15%; top: 12%;
     animation-name: enter1;
     animation-delay: 0.3s;
   }
@@ -237,7 +237,7 @@
   /* Forme 2 — ellipse cuivre clair en bas à droite */
   .shape-2 {
     width: 500px; height: 120px;
-    right: -4%; top: 72%;
+    right: -12%; top: 78%;
     animation-name: enter2;
     animation-delay: 0.5s;
   }
@@ -254,7 +254,7 @@
   /* Forme 3 — azur clair bas gauche */
   .shape-3 {
     width: 300px; height: 80px;
-    left: 6%; bottom: 8%;
+    left: 3%; bottom: 5%;
     animation-name: enter3;
     animation-delay: 0.4s;
   }
@@ -271,7 +271,7 @@
   /* Forme 4 — petite cuivre haut droit */
   .shape-4 {
     width: 200px; height: 60px;
-    right: 16%; top: 12%;
+    right: 5%; top: 8%;
     animation-name: enter4;
     animation-delay: 0.6s;
   }
@@ -285,10 +285,10 @@
     100% { opacity: 1; transform: translateY(0) rotate(20deg); }
   }
 
-  /* Forme 5 — tout petit ivoire haut */
+  /* Forme 5 — tout petit ivoire haut gauche */
   .shape-5 {
     width: 150px; height: 40px;
-    left: 22%; top: 7%;
+    left: 8%; top: 5%;
     animation-name: enter5;
     animation-delay: 0.7s;
   }
@@ -1219,12 +1219,14 @@
       <div>
         <span class="mono">— Mission</span>
         <p style="margin-top: 0.6rem;">Ouvert à tous types de collaborations. Paris & télétravail.</p>
-        <span class="mono" style="display:block; margin-top: 1rem;">— Postes recherchés</span>
+      </div>
+      <div>
+        <span class="mono">— Postes recherchés</span>
         <p style="margin-top: 0.6rem;">CDI · CDD · Freelance</p>
       </div>
-      <div class="cta">
-        <a href="#contact" class="btn">Me contacter →</a>
-      </div>
+    </div>
+    <div style="grid-column: 1 / 13; display: flex; justify-content: center; margin-top: 2rem;">
+      <a href="#contact" class="btn">Me contacter →</a>
     </div>
   </div>
 
