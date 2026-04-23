@@ -524,6 +524,40 @@
   }
   .exp-card ul li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
 
+  /* Chiffres clés dans les expériences */
+  .exp-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+  }
+  .exp-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.6rem 0.8rem;
+    background: rgba(201, 138, 85, 0.08);
+    border: 1px solid rgba(201, 138, 85, 0.2);
+    flex: 1;
+    min-width: 80px;
+  }
+  .exp-stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .exp-stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-dim);
+  }
+
   /* Cartes Compétences */
   .skills-track .carousel-card { flex: 0 0 calc((100% - 4.5rem) / 4); }
   .skill-card { display: flex; flex-direction: column; gap: 0.8rem; }
@@ -1324,6 +1358,12 @@
           <li>Définition d'une ligne éditoriale 100% digitale (LinkedIn, Twitter, YouTube)</li>
           <li>Analyse des performances et rapports trimestriels</li>
         </ul>
+        <div class="exp-stats">
+          <div class="exp-stat"><span class="exp-stat-num">614</span><span class="exp-stat-label">contenus publiés</span></div>
+          <div class="exp-stat"><span class="exp-stat-num">+800K</span><span class="exp-stat-label">impressions</span></div>
+          <div class="exp-stat"><span class="exp-stat-num">+25%</span><span class="exp-stat-label">followers</span></div>
+          <div class="exp-stat"><span class="exp-stat-num">135%</span><span class="exp-stat-label">engagement record</span></div>
+        </div>
       </div>
 
       <div class="carousel-card exp-card">
